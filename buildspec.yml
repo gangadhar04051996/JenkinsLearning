@@ -1,8 +1,15 @@
-pre_build:
-  commands:
-    - pip3 install awscli --upgrade --user
-    # - aws codeartifact login --tool pip --domain my_domain --domain-owner 111122223333 --repository my_repo
-build:
-  commands:
-    - pip install requests pandas numpy
-    - python new.py
+version: 0.2
+phases: 
+    install:
+      runtime-versions: 
+          python: 3
+      commands:
+          - echo "installing something"
+    pre_build:
+      commands:
+        - pip3 install awscli --upgrade --user
+        # - aws codeartifact login --tool pip --domain my_domain --domain-owner 111122223333 --repository my_repo
+    build:
+      commands:
+        - pip install requests pandas numpy
+        - python new.py
